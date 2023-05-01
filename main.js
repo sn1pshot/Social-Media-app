@@ -1,0 +1,8 @@
+const express = require("express")
+const app = express()
+const AdminRouter = require("./routes/admin_crud")
+const UserRouter = require("./routes/user_crud")
+app.use(express.json())
+app.use('/admin',AdminRouter)
+app.use('/users',UserRouter)
+app.listen({port:process.env.PORT})
